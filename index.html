@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Моё приложение</title>
+    <style>
+        /* Убираем все отступы */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+        }
+        iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Подключаем Telegram WebApp SDK (обязательно) -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <!-- Ваш виджет (ссылку нужно заменить) -->
+    <iframe src="https://4f87c86e-f8b8-470d-926c-e8cd079a9d03-00-2cb256ca9lsog.pike.replit.dev/"></iframe>
+
+    <script>
+        // Ждём полной загрузки страницы
+        window.onload = function() {
+            // Получаем доступ к API Telegram
+            const tg = window.Telegram.WebApp;
+            
+            // Сообщаем Telegram, что приложение готово к показу
+            tg.ready();
+            
+            // === ГЛАВНАЯ КОМАНДА: РАЗВОРАЧИВАЕМ НА ВЕСЬ ЭКРАН ===
+            // Это убирает шапку чата и нижнюю панель Telegram.
+            // Приложение станет полноэкранным.
+            tg.expand();
+            
+            // (ОПЦИОНАЛЬНО) Если сайт поддерживает полноэкранный режим через игру/видео:
+            // Можно также вызвать настоящий полноэкранный режим браузера
+            // document.documentElement.requestFullscreen();
+        };
+    </script>
+</body>
+</html>
