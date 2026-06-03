@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Моё приложение</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--tg-theme-bg-color, #ffffff);
+            color: var(--tg-theme-text-color, #000000);
+            font-family: system-ui, -apple-system;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1>Приложение работает!</h1>
+    <p>Если вы это видите — проблема не в коде.</p>
+
+    <script>
+        // Инициализируем WebApp и растягиваем на весь экран
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+        tg.expand();
+        
+        // Выведем в консоль информацию об устройстве для отладки
+        console.log('App opened. Platform:', tg.platform);
+        console.log('Version:', tg.version);
+    </script>
+</body>
+</html>
